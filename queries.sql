@@ -1,4 +1,8 @@
 -- Part 1: Test it with SQL
+--id: int
+--employer: varchar
+--name: varchar
+--skills: varchar
 
 -- Part 2: Test it with SQL
 
