@@ -5,6 +5,7 @@
 --skills: varchar
 
 -- Part 2: Test it with SQL
+--SELECT name FROM employer where location = "St. Louis City";
 
 -- Part 3: Test it with SQL
 
