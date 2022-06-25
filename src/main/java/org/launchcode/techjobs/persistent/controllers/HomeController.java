@@ -43,8 +43,8 @@ public class HomeController {
             model.addAttribute("title", "Add Job");
             return "add";
         }
-        newJob.setEmployer(employerRepository.findById(employerId));
-        employerRepository.save();
+        Employer newEmployer = employerRepository.findById(employerId).orElse(new Employer());
+        newJob.setEmployer(newEmployer);
         return "redirect:";
     }
 
