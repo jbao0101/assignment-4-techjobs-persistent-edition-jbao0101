@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by LaunchCode
@@ -52,12 +53,16 @@ public class HomeController {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Job");
             return "add";
-        }
-        Employer newEmployer = employerRepository.findById(employerId).orElse(new Employer());
-        newJob.setEmployer(newEmployer);
+        } else {
+            Optional optEmployer = employerRepository.findById(employerId);
+            if (optEmployer.isPresent()){
+                Employer newEmployer = (Employer) optEmployer.get();
+                newJob.setEmployer(newEmployer);
+            }
         List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skills);
         newJob.setSkills(skillObjs);
         jobRepository.save(newJob);
+        }
         return "redirect:";
     }
 
