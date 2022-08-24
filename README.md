@@ -1,4 +1,4 @@
-#README.md
+#Tech Jobs Tracker
 
 This is my final project from LaunchCode's LC101 course. This is the culmination of months worth of work, utilizing Java/SpringBoot, Thymeleaf for styling templates, 
 JPA/Hibernate and MySQL Workbench for backend database management.
